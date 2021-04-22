@@ -35,5 +35,7 @@ func GetConnection() *gorm.DB {
 
 func Migrate() {
 	_ = GetConnection()
-	db.AutoMigrate(&models.User{}, &models.Person{})
+	db.AutoMigrate(	&models.User{}, &models.Person{},
+	                &models.Module{}, &models.Profile{},
+	                &models.Claim{}, &models.ProfileModule{})
 }
